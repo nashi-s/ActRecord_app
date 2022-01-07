@@ -1,0 +1,13 @@
+<h1>投稿詳細</h1>
+<p>【メールアドレス】 <%= @act.user.email %></p>
+<p>【内容】 <%= @act.content %></p>
+<p>【作成日時】 <%= l @act.created_at %></p>
+<!-- ***** 条件分岐に変更 ***** -->
+<% if current_user.id == @act.user_id %>
+  <p>
+    <%= link_to "編集", edit_act_path(@act) %>
+    <%= link_to "削除", act_path(@act), method: :delete, data: { confirm: "削除しますか？" } %>
+  </p>
+<% end %>
+<!-- ***** 以上を修正 ***** -->
+<p><%= link_to "投稿一覧へ", acts_path %></p>
