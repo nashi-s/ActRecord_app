@@ -1,7 +1,7 @@
 <h1>履歴</h1>
 <% if user_signed_in? %>
   <% @acts.each do |act| %>
-    <p><%= act.content %></p>
+    <p><%= act.content %> : 会員No.<%= act.user.id %></p>
   <% end %>
 <% else %>
   <p>ログインしてください</p>
