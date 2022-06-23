@@ -1,6 +1,5 @@
 <h1>行動を記録</h1>
 <%= form_with model: @act, local: true do |form| %>
   <p><%= form.label :content, "内容" %> <%= form.text_field :content %></p>
-  <p></p>
   <%= form.submit "送信" %>
 <% end %>
